@@ -28,7 +28,7 @@ public class Exempel {
                     System.out.println(body);
                 }
 
-                strSelect = "select description, targetId from links where storyId = " + currentRoom;
+                strSelect = "select description, target_Id from links where story_Id = " + currentRoom;
 
                 rset = stmt.executeQuery(strSelect);
                 ArrayList<Integer> storyLinks = new ArrayList();
@@ -37,7 +37,7 @@ public class Exempel {
                 int rowCount = 0;
                 while (rset.next()) {
                     String description = rset.getString("description");
-                    int storyLink = rset.getInt("targetId");
+                    int storyLink = rset.getInt("target_Id");
                     storyLinks.add(storyLink);
                     System.out.println(++rowCount + " " + description);
                 }
