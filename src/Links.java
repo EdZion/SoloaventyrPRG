@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -11,6 +12,7 @@ public class Links {
     String alternative2;
     int target2;
     int currentRoom;
+
 
     public Links() {
         currentRoom = 1;
@@ -52,29 +54,25 @@ public class Links {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        // Loop through the result set and print
-        while (true) {
-            try {
-                if (!rset.next()) break;
-            } catch (SQLException e) {
-                e.printStackTrace();
+        // First description
+        try {
+            if (rset.next()){
+                alternative1 = rset.getString("description");
+                target1 = rset.getInt("target_Id");
             }
-            String description = null;
-            try {
-                description = rset.getString("description");
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            int storyLink = 0;
-            try {
-                storyLink = rset.getInt("target_Id");
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            storyLinks.add(storyLink);
-
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-
+        // Second description
+        try {
+            if (rset.next()){
+                alternative2 = rset.getString("description");
+                target2 = rset.getInt("target_Id");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
+ }
 
-}
+

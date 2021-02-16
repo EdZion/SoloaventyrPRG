@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class GUI {
     private JPanel Panel;
@@ -6,14 +8,21 @@ public class GUI {
     private JButton button1;
     private JButton button2;
 
-    public static void main(String[] args) {
-        Links game = new Links();
-        GUI gui = new GUI();
-        gui.textArea1.setText(game.body);
-        JFrame frame = new JFrame("MVC");
-        frame.setContentPane(gui.Panel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
+    public JPanel getPanel() {
+        return Panel;
+    }
+
+    public JTextArea getTextArea1() {
+        return textArea1;
+    }
+
+    public JButton getButton1() {
+        return button1;
+    }
+
+    public JButton getButton2() {
+        return button2;
     }
 }
+
+
