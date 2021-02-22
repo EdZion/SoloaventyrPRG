@@ -20,6 +20,22 @@ public class Controller {
         frame.pack();
         frame.setVisible(true);
 
+        gui.getButton1().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                game.currentRoom = game.target1;
+                // uppdatera modellen
+                // uppdatera view
+            }
+        });
+        gui.getButton2().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                game.currentRoom = game.target2;
+                // uppdatera modellen
+                // uppdatera view
+            }
+        });
     }
     /*public GUI() {
         button2.addActionListener(new ActionListener() {
