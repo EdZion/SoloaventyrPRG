@@ -37,21 +37,6 @@ public class Controller {
             }
         });
     }
-    /*public GUI() {
-        button2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-
-            }
-        });
-
-        button1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-
-            }
-        });
-    */
     public static void main(String[] args) {
         Controller main = new Controller();
     }
